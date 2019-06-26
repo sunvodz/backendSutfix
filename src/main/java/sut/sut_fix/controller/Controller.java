@@ -134,7 +134,7 @@ public class Controller {
         }
 
         newhistory.setHistoryComment("ยังไม่มีการแนะนำการซ่อม");
-        newhistory.setPoint("ยังไม่ให้คะแนนการซ่อม");
+        newhistory.setPoint(0);
 
         Date datere = new Date();
         newhistory.setHistoryDate(datere);
@@ -147,7 +147,7 @@ public class Controller {
 
     @PutMapping("/uphistory/{historyId}/{historyComment}/{point}")
     History replaceHistory(History History2, @PathVariable Long historyId, @PathVariable String historyComment,
-            @PathVariable String point) {
+            @PathVariable Integer point) {
 
         return historyRepository.findById(historyId).map(history -> {
             history.setHistoryComment(historyComment);
