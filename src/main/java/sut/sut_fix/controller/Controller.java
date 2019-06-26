@@ -106,7 +106,6 @@ public class Controller {
                 .filter((s) -> "Successfully"
                         .equals(s.getSuccessfulRepair().getManage().getRepair().getRepairStatus())
                         && Uid.equals(s.getSuccessfulRepair().getManage().getRepair().getCustomer().getCustomerUid())
-                        && "ยังไม่ให้คะแนนการซ่อม".equals(s.getPoint())
                         && "ยังไม่มีการแนะนำการซ่อม".equals(s.getHistoryComment()))
                 .collect(Collectors.toList());
     }

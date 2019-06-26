@@ -12,5 +12,4 @@ import org.springframework.data.rest.webmvc.RepositoryRestController;
 @RepositoryRestResource
 public interface HistoryRepository extends JpaRepository<History, Long> {
     History findByHistoryId(Long historyId);
-    History findByPoint(String point);
 }
