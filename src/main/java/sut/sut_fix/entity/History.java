@@ -28,8 +28,6 @@ public class History {
 
     private String point;
 
-    private String technicAverage;
-
     @JsonFormat(pattern = "yyyy-MM-dd : HH-mm" ,timezone = "GMT+7")
     private Date historyDate;
     

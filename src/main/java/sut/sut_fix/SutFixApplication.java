@@ -282,7 +282,6 @@ public class SutFixApplication {
 			history1.setSuccessfulRepair(sr);
 			historyRepository.save(history1); */
 
-
 			System.out.println("\n Spring-Boot Complete");
 		};
 	}

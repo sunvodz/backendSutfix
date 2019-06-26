@@ -330,42 +330,8 @@ public class Controller {
         return technicRepository.findAll().stream().collect(Collectors.toList());
     }
 
-    @GetMapping("/historyPoint/{id}")
+    @GetMapping("/technicPointss/{id}")
     public Collection<History> history3(@PathVariable Long id) {
-
-            History tec = historyRepository.findByHistoryId(id);
-            Long idtL = tec.getSuccessfulRepair().getManage().getTechnic().getTechnicId();
-            Integer idt = idtL.intValue();
-            Integer pointa = Integer.parseInt(tec.getPoint());
-            Integer te = 0;
-            Integer i; 
-            Integer p = 0;
-
-                for(i=0; i > idt; i++){
-                    
-                    te += idt;
-                }
-
-                System.out.println(te);
-    
-                for(i=0; i > pointa; i++){
-                    
-                    p += pointa;
-                }
-                System.out.println(p);
-                int apt;
-    
-                apt = te/p;
-
-                String a = String.valueOf(apt);
-
-                System.out.println(a);
-
-                History newTechnic = new History();
-
-                newTechnic.setTechnicAverage(a);
-                historyRepository.save(newTechnic);
-
                 return historyRepository.findAll().stream()
                 .filter((s) -> id.equals(s.getSuccessfulRepair().getManage().getTechnic().getTechnicId()))
                 .collect(Collectors.toList());
